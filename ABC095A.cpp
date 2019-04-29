@@ -1,20 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+using LL = long long;
+
 int main() {
   cin.tie(0);
   ios_base::sync_with_stdio(false);
 
-  string str;
-  cin >> str;
+  int ans = 700;
+  string S;
+  cin >> S;
 
-  int ans = 0;
-
-  for (int i = 0; i < 4; i++) {
-    if (str[i] == '+') {
-      ans++;
-    } else {
-      ans--;
+  for (int i = 0; i < 3; i++) {
+    if (S[i] == 'o') {
+      ans += 100;
     }
   }
 

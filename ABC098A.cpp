@@ -7,9 +7,15 @@ int main() {
   cin.tie(0);
   ios_base::sync_with_stdio(false);
 
-  int ans;
-  int N;
-  cin >> N;
+  int A, B;
+  cin >> A >> B;
+
+  vector<int> vec;
+  vec.push_back(A + B);
+  vec.push_back(A - B);
+  vec.push_back(A * B);
+
+  int ans = *max_element(vec.begin(), vec.end());
 
   cout << ans << '\n';
 

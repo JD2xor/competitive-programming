@@ -1,21 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+using LL = long long;
+
 int main() {
   cin.tie(0);
   ios_base::sync_with_stdio(false);
 
-  string str;
-  cin >> str;
+  int ans;
+  int a, b;
+  cin >> a >> b;
 
-  int ans = 0;
-
-  for (int i = 0; i < 4; i++) {
-    if (str[i] == '+') {
-      ans++;
-    } else {
-      ans--;
-    }
+  ans = a - 1;
+  if (b >= a) {
+    ans++;
   }
 
   cout << ans << '\n';

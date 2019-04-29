@@ -7,11 +7,14 @@ int main() {
   cin.tie(0);
   ios_base::sync_with_stdio(false);
 
-  int ans;
   int N;
   cin >> N;
 
-  cout << ans << '\n';
+  if (N < 1000) {
+    cout << "ABC" << '\n';
+  } else {
+    cout << "ABD" << '\n';
+  }
 
   return 0;
 }
