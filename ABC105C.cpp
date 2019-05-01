@@ -11,9 +11,28 @@ int main() {
   cin.tie(0);
   ios_base::sync_with_stdio(false);
 
-  int ans;
+  string ans;
   int N;
   cin >> N;
+
+  if (!N) {
+    ans = "0";
+  }
+
+  int temp;
+  while (N) {
+    if (N % 2 == -1) {
+      ans.push_back('1');
+      N -= 1;
+    } else {
+      char c = '0' + N % (-2);
+      ans.push_back(c);
+    }
+
+    N = N / (-2);
+  }
+
+  reverse(ALL(ans));
 
   cout << ans << '\n';
 

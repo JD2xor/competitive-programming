@@ -11,9 +11,25 @@ int main() {
   cin.tie(0);
   ios_base::sync_with_stdio(false);
 
-  int ans;
+  int ans = -1;
   int N;
   cin >> N;
+  string S;
+  cin >> S;
+
+  FOR(i, 1, N) {
+    int count = 0;
+    string L = S.substr(0, i);
+    string R = S.substr(i, N - i);
+
+    for (char c = 'a'; c <= 'z'; c++) {
+      if ((L.find(c) != -1) && (R.find(c) != -1)) {
+        count++;
+      }
+    }
+
+    ans = max(ans, count);
+  }
 
   cout << ans << '\n';
 

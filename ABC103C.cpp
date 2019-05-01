@@ -11,9 +11,14 @@ int main() {
   cin.tie(0);
   ios_base::sync_with_stdio(false);
 
-  int ans;
+  int ans = 0;
   int N;
   cin >> N;
+  int a;
+  FOR(i, 0, N) {
+    cin >> a;
+    ans += a - 1;
+  }
 
   cout << ans << '\n';
 
