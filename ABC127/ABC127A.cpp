@@ -15,13 +15,15 @@ int main() {
   ios_base::sync_with_stdio(false);
 
   int ans;
-  int N, A, B;
-  cin >> N >> A >> B;
+  int A, B;
+  cin >> A >> B;
 
-  if (A * N <= B) {
-    ans = A * N;
-  } else {
+  if (A >= 13) {
     ans = B;
+  } else if (A >= 6) {
+    ans = B / 2;
+  } else {
+    ans = 0;
   }
 
   cout << ans << '\n';

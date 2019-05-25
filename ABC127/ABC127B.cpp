@@ -14,17 +14,16 @@ int main() {
   cin.tie(0);
   ios_base::sync_with_stdio(false);
 
-  int ans;
-  int N, A, B;
-  cin >> N >> A >> B;
+  LL ans;
+  int r, D;
+  LL x;
+  cin >> r >> D >> x;
 
-  if (A * N <= B) {
-    ans = A * N;
-  } else {
-    ans = B;
+  FOR(i, 0, 10) {
+    x = r * x - D;
+    ans = x;
+    cout << ans << '\n';
   }
-
-  cout << ans << '\n';
 
   return 0;
 }

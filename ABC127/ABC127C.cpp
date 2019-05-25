@@ -14,14 +14,19 @@ int main() {
   cin.tie(0);
   ios_base::sync_with_stdio(false);
 
-  int ans;
-  int N, A, B;
-  cin >> N >> A >> B;
+  int ans = 0;
+  int N, M;
+  cin >> N >> M;
+  int L, R, Lmax = 0, Rmin = INF;
+  FOR(i, 0, M) {
+    cin >> L >> R;
+    Lmax = max(Lmax, L);
+    Rmin = min(Rmin, R);
+  }
 
-  if (A * N <= B) {
-    ans = A * N;
-  } else {
-    ans = B;
+  ans = Rmin - Lmax + 1;
+  if (ans < 0) {
+    ans = 0;
   }
 
   cout << ans << '\n';
