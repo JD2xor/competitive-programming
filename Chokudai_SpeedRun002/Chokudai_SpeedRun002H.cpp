@@ -18,8 +18,18 @@ int main() {
   LL ans;
   int N;
   cin >> N;
+  LL A, B;
+  FOR(i, 0, N) {
+    cin >> A >> B;
 
-  cout << ans << '\n';
+    ans = max(A, B) - min(A, B);
+
+    if (A == B) {
+      ans = -1;
+    }
+
+    cout << ans << '\n';
+  }
 
   return 0;
 }

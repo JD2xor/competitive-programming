@@ -9,7 +9,6 @@ using LL = long long;
 #define debug(x) cout << #x << " : " << x << '\n'
 
 const int INF = 1e9;
-const LL LINF = 1e16;
 
 int main() {
   cin.tie(0);
@@ -18,8 +17,12 @@ int main() {
   LL ans;
   int N;
   cin >> N;
-
-  cout << ans << '\n';
+  LL A, B;
+  FOR(i, 0, N) {
+    cin >> A >> B;
+    ans = A * B;
+    cout << ans << '\n';
+  }
 
   return 0;
 }

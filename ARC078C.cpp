@@ -18,6 +18,21 @@ int main() {
   LL ans;
   int N;
   cin >> N;
+  vector<LL> a(N);
+  vector<LL> sum(N);
+  LL acc = 0;
+  FOR(i, 0, N) {
+    cin >> a[i];
+    acc += a[i];
+    sum[i] = acc;
+  }
+
+  ans = LINF;
+  LL temp;
+  FOR(i, 0, N - 1) {
+    temp = abs(sum[i] - (sum[N - 1] - sum[i]));
+    ans = min(ans, temp);
+  }
 
   cout << ans << '\n';
 
