@@ -12,8 +12,8 @@ const int INF = 1e9;
 const LL LINF = 1e16;
 const int MOD = 1e9 + 7;
 
-int func(int num) {
-  int result = 0;
+LL func(int num) {
+  LL result = 1;
 
   for (int i = 1; i <= num; i++) {
     result = (result * i) % MOD;
@@ -39,10 +39,12 @@ int main() {
 
   if (sub) {
     // N と M が違う時
-    ans = (func(N) * func(M)) % MOD;
+    ans = func(N) * func(M);
+    ans = ans % MOD;
   } else {
     // N と M が同じ時
-    ans = (func(N) * func(M) * 2) % MOD;
+    ans = func(N) * func(M) * 2;
+    ans = ans % MOD;
   }
 
   cout << ans << '\n';

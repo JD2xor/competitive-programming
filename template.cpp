@@ -9,6 +9,7 @@ using LL = long long;
 #define debug(x) cout << #x << " : " << x << '\n'
 
 const int INF = 1e9;
+const int MOD = 1e9 + 7;
 const LL LINF = 1e16;
 
 int main() {
