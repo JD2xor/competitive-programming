@@ -20,9 +20,10 @@ int main() {
   cin >> N;
   vector<LL> a(N);
   FOR(i, 0, N) { cin >> a[i]; }
-  vector<LL> b(N, 0);
-  vector<LL*> ptr(N, 0);
-  FOR(i, 0, N) { ptr[i] = &b[i]; }
+  vector<LL> b(N);
+  b = a;
+
+  map<int, int> m;
 
   sort(a.begin(), a.end());
 
@@ -34,10 +35,10 @@ int main() {
     }
 
     num = a[i];
-    a[i] = count;
+    m[a[i]] = count;
   }
 
-  FOR(i, 0, N) { cout << *b[i] << '\n'; }
+  FOR(i, 0, N) { cout << m[b[i]] << '\n'; }
 
   return 0;
 }

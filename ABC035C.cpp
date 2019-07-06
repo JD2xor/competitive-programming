@@ -18,17 +18,19 @@ int main() {
 
   int N, Q;
   cin >> N >> Q;
-  vector<int> board(N, 0);
+  vector<int> board(N + 1, 0);
   int l, r;
   FOR(i, 0, Q) {
     cin >> l >> r;
 
-    int start = l - 1;
-    FOR(j, start, r) { board[j]++; }
+    board[l - 1] += 1;
+    board[r] -= 1;
   }
 
-  FOR(j, 0, N) {
-    if (board[j] % 2) {
+  FOR(i, 1, N + 1) { board[i] = board[i] + board[i - 1]; }
+
+  FOR(i, 0, N) {
+    if (board[i] % 2) {
       cout << 1;
     } else {
       cout << 0;
