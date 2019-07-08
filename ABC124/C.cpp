@@ -3,47 +3,53 @@ using namespace std;
 
 using LL = long long;
 
+#define ALL(a) begin((a)), end((a))
+#define FOR(i, a, b) for (int(i) = (a); (i) < (b); (i)++)
+#define RFOR(i, a, b) for (int(i) = (a); (i) > (b); (i)--)
+#define debug(x) cerr << #x << " : " << x << '\n'
+
 int main() {
   cin.tie(0);
   ios_base::sync_with_stdio(false);
 
-  string str;
-  cin >> str;
+  LL ans = 0;
+  string S;
+  cin >> S;
 
-  int l = str.length();
-  char c[l];
-  int S[l];
+  int len = S.length();
 
-  for (int i = 0; i < l; i++) {
-    c[i] = str[i];
-    S[i] = atoi(&c[i]);
-  }
-
-  int count = 0;
-  for (int i = 2; i < l; i++) {
-    if (S[i - 2] == S[i - 1] && S[i - 1] == S[i]) {
-      S[i - 1] = 1 - S[i - 1];
-      count++;
+  string bw;
+  FOR(i, 0, len) {
+    if (i % 2) {
+      bw.push_back('1');
+    } else {
+      bw.push_back('0');
     }
   }
 
-  /*
-  for (int i = 2; i <= l - 1; i++) {
-      if (S[i - 1] == S[i]) {
-          S[i - 2] = 1 - S[i - 2];
-          count++;
-          S[i - 1] = 1 - S[i - 1];
-          count++;
-          i += 2;
-      }
-  }
-  */
-
-  // 1100 or 0011
-  for (int i = 3; i < l; i++) {
+  string wb;
+  FOR(i, 0, len) {
+    if (i % 2) {
+      wb.push_back('0');
+    } else {
+      wb.push_back('1');
+    }
   }
 
-  cout << count << '\n';
+  LL temp = 0;
+  FOR(i, 0, len) {
+    if (S[i] != bw[i]) {
+      temp++;
+    }
+  }
+  FOR(i, 0, len) {
+    if (S[i] != wb[i]) {
+      ans++;
+    }
+  }
+
+  ans = min(ans, temp);
+  cout << ans << '\n';
 
   return 0;
 }
