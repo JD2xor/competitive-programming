@@ -1,8 +1,0 @@
-int min = *min_element(vec.begin(), vec.end());
-int max = *max_element(vec.begin(), vec.end());
-
-decltype(vec)::iterator itr = min_element(vec.begin(), vec.end());
-decltype(vec)::iterator itr = max_element(vec.begin(), vec.end());
-
-int index = std::distance(vec.begin(), itr);
-int index = std::distance(vec.begin(), itr);
